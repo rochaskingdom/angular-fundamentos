@@ -13,16 +13,10 @@
           (click)="adicionar()" [disabled]="nome.length == 0">Adicionar
   </button>
 
-  <!--  https://randomuser.me/photos-->
   <div class="row" style="margin-top: 20px">
 
     <div class="col-2" *ngFor="let funcionario of funcionarios">
-      <div class="card">
-        <img src="https://randomuser.me/api/portraits/men/{{funcionario.id}}.jpg" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">{{funcionario.nome}}</h5>
-        </div>
-      </div>
+      <app-funcionario-card [obj]="funcionario"></app-funcionario-card>
     </div>
 
   </div>
