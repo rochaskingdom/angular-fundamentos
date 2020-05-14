@@ -7,12 +7,19 @@ import {Component, Input} from '@angular/core';
   styles: [`
     .card-title {
       text-transform: uppercase;
-      color: lawngreen;
+      color: hotpink;
     }
   `]
 })
 export class FuncionarioCardComponent {
 
   @Input('obj') funcionario: any;
+
+  getEstilosCartao() {
+    return {
+      'borderWidth.px': this.funcionario.id,
+      backgroundColor: this.funcionario.id % 2 === 0 ? 'lightblue' : 'lightgreen'
+    };
+  }
 
 }
